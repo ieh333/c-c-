@@ -1,0 +1,60 @@
+# Project: PBX
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o header.o menu.o sub_menu.o create_data_file.o create_text_file.o append_text_file.o check_up.o countlines.o list_subscr.o total_minutes.o $(RES)
+LINKOBJ  = main.o header.o menu.o sub_menu.o create_data_file.o create_text_file.o append_text_file.o check_up.o countlines.o list_subscr.o total_minutes.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = PBX.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before PBX.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "PBX.exe" $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+header.o: header.c
+	$(CC) -c header.c -o header.o $(CFLAGS)
+
+menu.o: menu.c
+	$(CC) -c menu.c -o menu.o $(CFLAGS)
+
+sub_menu.o: sub_menu.c
+	$(CC) -c sub_menu.c -o sub_menu.o $(CFLAGS)
+
+create_data_file.o: create_data_file.c
+	$(CC) -c create_data_file.c -o create_data_file.o $(CFLAGS)
+
+create_text_file.o: create_text_file.c
+	$(CC) -c create_text_file.c -o create_text_file.o $(CFLAGS)
+
+append_text_file.o: append_text_file.c
+	$(CC) -c append_text_file.c -o append_text_file.o $(CFLAGS)
+
+check_up.o: check_up.c
+	$(CC) -c check_up.c -o check_up.o $(CFLAGS)
+
+countlines.o: countlines.c
+	$(CC) -c countlines.c -o countlines.o $(CFLAGS)
+
+list_subscr.o: list_subscr.c
+	$(CC) -c list_subscr.c -o list_subscr.o $(CFLAGS)
+
+total_minutes.o: total_minutes.c
+	$(CC) -c total_minutes.c -o total_minutes.o $(CFLAGS)
